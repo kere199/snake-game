@@ -1,9 +1,11 @@
 import turtle as t 
 from turtle import Screen, Turtle
+import time
 
 screen = t.Screen()
 screen.bgcolor("black")
-# screen.screensize(canvwidth=600, canvheight=600, bg="black")
+screen.tracer(0)
+screen.update()
 screen.setup(width=600, height=600)
 
 
@@ -18,10 +20,12 @@ for pos in positions:
     segments.append(new_turtle)
 
 
-
-for x in range(5):
+game_is_on = True
+while game_is_on ==True:
+    time.sleep(1)
     for segment in segments:
        segment.forward(20)
+       screen.update()
 
 
    
