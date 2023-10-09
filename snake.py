@@ -2,6 +2,10 @@ import turtle as t
 from turtle import Screen, Turtle
 import time
 
+up = 90
+right = 0
+left = 180
+down = 270
 
 positions = [(0,0), (20,0), (40,0)]
 class Snake:
@@ -14,6 +18,7 @@ class Snake:
             new_turtle.penup()
             new_turtle.goto(pos)
             self.segments.append(new_turtle)
+        self.head = self.segments[-1]
 
     def move(self):
           for i in range(0, len(self.segments)-1):
@@ -21,6 +26,25 @@ class Snake:
                next_one = self.segments[i + 1]
                xy = next_one.pos()
                current.goto(xy)
-          self.segments[-1].forward(20)
+          self.head.forward(20)
+
+    def up(self):
+         if self.head.heading() != down:
+              self.head.setheading(up)
+
+    def left(self):
+         if self.head.heading() != right:
+              self.head.setheading(left)
+
+    def right(self):
+         if self.head.heading() != left:
+              self.head.setheading(right)
+
+    def down(self):
+         if self.head.heading() != up:
+              self.head.setheading(down)
+
+
+
 
            
