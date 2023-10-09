@@ -13,8 +13,18 @@ for pos in positions:
     new_turtle = Turtle()
     new_turtle.shape("square")
     new_turtle.color("white")
+    new_turtle.penup()
     new_turtle.goto(pos)
     segments.append(new_turtle)
+
+
+
+for x in range(5):
+    for segment in segments:
+       segment.forward(20)
+
+
+   
 
 
 screen.exitonclick()
