@@ -27,7 +27,7 @@ class Snake:
                xy = next_one.pos()
                current.goto(xy)
           self.head.forward(20)
-
+     
     def up(self):
          if self.head.heading() != down:
               self.head.setheading(up)
@@ -43,6 +43,18 @@ class Snake:
     def down(self):
          if self.head.heading() != up:
               self.head.setheading(down)
+
+    def extend_snake(self):
+        tail = self.segments[-1]
+        newtail = Turtle()
+        newtail.penup()
+        newtail.shape("square")
+        newtail.color("white")
+        x = tail.xcor()
+        y = tail.ycor()
+        newtail.goto(x,y)
+        self.segments.insert(0,newtail)
+
 
 
 
