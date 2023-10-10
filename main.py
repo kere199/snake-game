@@ -28,6 +28,8 @@ while game_is_on ==True:
     time.sleep(0.1)
     snake.move()
     screen.update()
+    if snake.head.distance(food) < 15:
+        food.food_pos()
 
 
 
