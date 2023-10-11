@@ -14,7 +14,6 @@ screen.setup(width=600, height=600)
 
 positions = [(0,0), (20,0), (40,0)]
 
-
 snake = Snake()
 screen.listen()
 screen.onkey(snake.up,"Up")
