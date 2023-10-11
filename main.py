@@ -38,6 +38,10 @@ while game_is_on ==True:
     if snake.head.ycor() < -300 or snake.head.ycor() > 300 or snake.head.xcor() < -300 or snake.head.xcor() > 300:
         scoreboard.game_over()
         break
+    if snake.check_colision() == True:
+        scoreboard.game_over()
+        break
+        
 
 
 
