@@ -55,21 +55,23 @@ class Snake:
         newtail.goto(x,y)
         self.segments.insert(0,newtail)
 
-    # def check_colision(self):
-    #      tur_cors =[]
-    #      for segment in self.segments[:-1]:
-    #           cor = (segment.xcor(), segment.ycor())
-    #           tur_cors.append(cor)
-    #      x = self.head.xcor() 
-    #      y = self.head.ycor()
-    #      head_cor = (x,y)
-    #      if head_cor in tur_cors:
-    #         return True
 
     def check_colision(self):
          for s in self.segments[:-1]:
-              if s.pos() == self.head.pos():
+          #     if s.pos() == self.head.pos():
+              if s.distance(self.head.pos()) <= 5:
                    return True
+              
+
+    def restart_game(self):
+         self.head.goto(0,0)
+         for segment in self.segments[:-len(positions)]:
+              segment.hideturtle()
+         self.segments = self.segments[-len(positions):]
+
+          
+              
+         
 
     
 
